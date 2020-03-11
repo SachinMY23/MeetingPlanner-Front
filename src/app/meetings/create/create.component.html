@@ -1,0 +1,71 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+
+  <a class="navbar-brand" href="/">{{userName}}</a>
+
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+    aria-expanded="false" aria-label="Toggle navigation">
+
+    <span class="navbar-toggler-icon"></span>
+
+  </button>
+
+  <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+    <ul class="navbar-nav mr-auto">
+
+      <li class="nav-item">
+
+        <a class="nav-link" (click)="goToUsersview()">Go Back</a>
+
+      </li>
+
+    </ul>
+
+  </div>
+
+</nav>
+<br/>
+<div class="row p-0 m-0">
+  
+  <div class="col-sm"></div>
+
+  <div class="col-sm p-5">
+
+    <h2 class="form-signin-heading">Create Meeting for {{fullName}}</h2>
+
+    <br>
+
+    <span>Meeting Purpose: </span>
+
+    <label for="inputPurpose" class="sr-only">Meeting Purpose</label>
+
+    <input type="text" id="inputPurpose" class="form-control" [(ngModel)]="purpose" placeholder="Meeting Purpose" required autofocus>
+
+    <br>
+
+    <span>Meeting Place</span>
+
+    <label for="inputLastName" class="sr-only">Meeting Place</label>
+
+    <input type="text" id="inputPlace" class="form-control" [(ngModel)]="place" placeholder="Meeting Place" required>
+
+    <br>
+    <span>Meeting Time: </span>
+
+    <label for="inputTime" class="sr-only">Meeting Time</label>
+
+    <input type="text" id="inputTime" class="form-control" [(ngModel)]="time" placeholder="Time(MM-DD-YYYY HH:MM:SS)" required>
+
+
+    
+    <br>
+
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="createMeetingFunction()">Create Meeting</button>
+
+  </div>
+
+  <div class="col-sm"></div>
+
+</div>
+
+

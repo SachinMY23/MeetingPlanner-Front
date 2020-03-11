@@ -24,9 +24,17 @@
               "src/assets"
             ],
             "styles": [
+              "node_modules/bootstrap/dist/css/bootstrap.min.css",
+              "node_modules/ngx-toastr/toastr.css",
+              "node_modules/flatpickr/dist/flatpickr.css",
+              "node_modules/angular-calendar/css/angular-calendar.css",
               "src/styles.css"
+              
             ],
-            "scripts": []
+            "scripts": ["node_modules/jquery/dist/jquery.min.js",
+              "node_modules/bootstrap/dist/js/bootstrap.min.js",
+              "node_modules/socket.io-client/dist/socket.io.js"
+            ]
           },
           "configurations": {
             "production": {

@@ -9,7 +9,7 @@ import {Cookie} from  'ng2-cookies/ng2-cookies';
 })
 export class AppService {
 
-  private url =  'http://localhost:3000';
+  private url =  'http://www.api.techway.xyz';
 
 
   constructor(public http:HttpClient) { }

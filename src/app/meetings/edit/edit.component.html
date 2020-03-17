@@ -1,10 +1,9 @@
-
 <nav class="navbar navbar-expand-md navbar-dark bg-dark">
 
   <a class="navbar-brand" href="/">Meeting Scheduler</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
     <span class="navbar-toggler-icon"></span>
 
@@ -25,43 +24,45 @@
   </div>
 
 </nav>
-<br/>
+<br />
 <div class="container">
-    <div class="row" style="text-align:left">
-      <div class="col-md-12">
-        <form #createBlogForm="ngForm">
-  
-          <div class="form-group">
-  
-  
-            <label>Meeting Purpose</label>
-            <input type="text" name="meetingPurpose" [(ngModel)]="purpose" #title="ngModel" class="form-control" placeholder="Enter Meeting Purpose"
-              required>
-  
-          </div>
-          <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
-           Meeting Purpose is required 
-          </div>
-  
-          <div class="form-group">
-            <label>Meeting Place</label>
-            <input type="text" name="meetingPlace" [(ngModel)]="place" #description="ngModel" class="form-control" placeholder="Enter Meeting Place"
-              required>
-          </div>
-          <div class="form-group">
-            <label>Enter Meeting Time</label>
-            <input name="meetingTime" [(ngModel)]="time" #bodyHtml="ngModel" class="form-control" placeholder="Time(MM-DD-YYYY HH:MM:SS)" required>
-          </div>
-          <div class="form-group">
-            <label>Admin Name</label>
-            <p> {{adminName}}</p>
-          </div>
-  
-  
-          <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!createBlogForm.form.valid" (click)="editMeetingFunction()">Edit Meeting</button>
+  <div class="row" style="text-align:left">
+    <div class="col-md-12">
+      <form #createBlogForm="ngForm">
 
-        </form>
-      </div>
-  
+        <div class="form-group">
+
+
+          <label>Meeting Purpose</label>
+          <input type="text" name="meetingPurpose" [(ngModel)]="purpose" #title="ngModel" class="form-control"
+            placeholder="Enter Meeting Purpose" required>
+
+        </div>
+        <div [hidden]="title.valid || title.pristine" class="alert alert-danger">
+          Meeting Purpose is required
+        </div>
+
+        <div class="form-group">
+          <label>Meeting Place</label>
+          <input type="text" name="meetingPlace" [(ngModel)]="place" #description="ngModel" class="form-control"
+            placeholder="Enter Meeting Place" required>
+        </div>
+        <div class="form-group">
+          <label>Enter Meeting Time</label>
+          <input name="meetingTime" [(ngModel)]="time" #bodyHtml="ngModel" class="form-control"
+            placeholder="Time(MM-DD-YYYY HH:MM:SS)" required>
+        </div>
+        <div class="form-group">
+          <label>Admin Name</label>
+          <p> {{adminName}}</p>
+        </div>
+
+
+        <button type="submit" class="btn btn-lg btn-primary btn-block" [disabled]="!createBlogForm.form.valid"
+          (click)="editMeetingFunction()">Edit Meeting</button>
+
+      </form>
     </div>
+
   </div>
+</div>

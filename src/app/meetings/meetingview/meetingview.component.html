@@ -2,8 +2,8 @@
 
   <a class="navbar-brand" href="/">Meeting Scheduler</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
     <span class="navbar-toggler-icon"></span>
 
@@ -24,27 +24,27 @@
   </div>
 
 </nav>
-<br/>
-<div class="alert alert-warning alert-dismissible fade show" role="alert"  *ngIf="alert==true">
+<br />
+<div class="alert alert-warning alert-dismissible fade show" role="alert" *ngIf="alert==true">
   <strong>Hi</strong> You have a meeting in less than a minute.
-  
+
 
   <button type="button" class="close btn btn-secondary btn-sm close" data-dismiss="alert" aria-label="Close">
     <span aria-hidden="true">Ignore</span>
   </button>
   <button class="btn btn-secondary btn-sm close" type="button" style="margin-right:120px" (click)="alertClientAgain()">
-   <span>Snooze</span>
+    <span>Snooze</span>
   </button>
- 
- 
- 
+
+
+
 </div>
 <div class="container">
   <div class="row" style="text-align:left">
     <h1 style="text-align: center;">Meeting Details</h1>
     <div class="col-md-12">
-      <br/>
-      <br/>
+      <br />
+      <br />
       <form #createBlogForm="ngForm">
 
         <div class="form-group">
@@ -53,38 +53,40 @@
           <label class="label">Meeting Purpose:</label>
           <p class="comp">{{purpose}}</p>
         </div>
-        <hr/>
+        <hr />
 
         <div class="form-group">
           <label class="label">Meeting Place:</label>
-            <p class="comp">{{place}}</p>
+          <p class="comp">{{place}}</p>
         </div>
-        <hr/>
+        <hr />
         <div class="form-group">
           <label class="label">Meeting Time:</label>
-          <p class="comp">{{time}}</p> 
+          <p class="comp">{{time}}</p>
         </div>
-        <hr/>
+        <hr />
         <div class="form-group">
           <label class="label">Admin Name:</label>
           <p class="comp"> {{adminName}}</p>
         </div>
-         <hr/>
-        </form>
-<br/>
-<div class="container" style="text-align:center" *ngIf="isAdmin==true">
-  <div class="row">
-  <div class="col-md-6">
-        <button type="submit" class="btn  btn-block btn-outline-primary" (click)="editMeetingFunction()">Edit</button>
-        <br/>
-  </div>
+        <hr />
+      </form>
+      <br />
+      <div class="container" style="text-align:center" *ngIf="isAdmin==true">
+        <div class="row">
+          <div class="col-md-6">
+            <button type="submit" class="btn  btn-block btn-outline-primary"
+              (click)="editMeetingFunction()">Edit</button>
+            <br />
+          </div>
 
-  <div class="col-md-6">
+          <div class="col-md-6">
 
-      <button type="submit" class="btn btn-block btn-outline-danger" (click)="deleteMeetingFunction()">Delete</button>
-      <br/>
-      </div>
-      </div>
+            <button type="submit" class="btn btn-block btn-outline-danger"
+              (click)="deleteMeetingFunction()">Delete</button>
+            <br />
+          </div>
+        </div>
       </div>
     </div>
 

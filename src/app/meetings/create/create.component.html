@@ -2,8 +2,8 @@
 
   <a class="navbar-brand" href="/">{{userName}}</a>
 
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-    aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
 
     <span class="navbar-toggler-icon"></span>
 
@@ -24,9 +24,9 @@
   </div>
 
 </nav>
-<br/>
+<br />
 <div class="row p-0 m-0">
-  
+
   <div class="col-sm"></div>
 
   <div class="col-sm p-5">
@@ -39,7 +39,8 @@
 
     <label for="inputPurpose" class="sr-only">Meeting Purpose</label>
 
-    <input type="text" id="inputPurpose" class="form-control" [(ngModel)]="purpose" placeholder="Meeting Purpose" required autofocus>
+    <input type="text" id="inputPurpose" class="form-control" [(ngModel)]="purpose" placeholder="Meeting Purpose"
+      required autofocus>
 
     <br>
 
@@ -54,18 +55,18 @@
 
     <label for="inputTime" class="sr-only">Meeting Time</label>
 
-    <input type="text" id="inputTime" class="form-control" [(ngModel)]="time" placeholder="Time(MM-DD-YYYY HH:MM:SS)" required>
+    <input type="text" id="inputTime" class="form-control" [(ngModel)]="time" placeholder="Time(MM-DD-YYYY HH:MM:SS)"
+      required>
 
 
-    
+
     <br>
 
-    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="createMeetingFunction()">Create Meeting</button>
+    <button class="btn btn-lg btn-primary btn-block" type="button" (click)="createMeetingFunction()">Create
+      Meeting</button>
 
   </div>
 
   <div class="col-sm"></div>
 
 </div>
-
-

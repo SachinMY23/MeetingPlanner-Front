@@ -22,6 +22,8 @@ export class CreateComponent implements OnInit {
   public fullName: any;
   public email: any;
   public oldTime: any;
+  public userName = Cookie.get('fullName')
+
 
   constructor(public router: Router,
     public toastr: ToastrService,
@@ -40,7 +42,7 @@ export class CreateComponent implements OnInit {
       }
     })
     this.socket.directAlert().subscribe((data) => {
-      this.toastr.warning(data.msg)
+      this.toastr.show(data.msg)
     });
   }
 

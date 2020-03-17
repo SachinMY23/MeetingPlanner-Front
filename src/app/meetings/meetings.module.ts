@@ -1,9 +1,9 @@
 
 import { AdminviewComponent } from './adminview/adminview.component';
 import { UserviewComponent } from './userview/userview.component';
-import {ToastrModule} from 'ngx-toastr';
-import {RouterModule} from '@angular/router';
-import {UserModule} from './../user/user.module'
+import { ToastrModule } from 'ngx-toastr';
+import { RouterModule } from '@angular/router';
+import { UserModule } from './../user/user.module'
 
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
@@ -16,7 +16,7 @@ import { CreateComponent } from './create/create.component';
 import { EditComponent } from './edit/edit.component';
 import { MeetingviewComponent } from './meetingview/meetingview.component';
 import { MeetingdayviewComponent } from './meetingdayview/meetingdayview.component';
-import {SharedModule} from './../shared/shared.module'
+import { SharedModule } from './../shared/shared.module'
 
 
 
@@ -29,11 +29,11 @@ import {SharedModule} from './../shared/shared.module'
     ToastrModule,
     FlatpickrModule,
     RouterModule.forChild([
-      {path:'admin/view/:userId',component:AdminviewComponent},
-      {path:'users/view/:userId',component:UserviewComponent},
-      {path:'meetings/view/:meetingId',component:MeetingviewComponent},
-      {path:'meetings/create/:userId',component:CreateComponent},
-      {path:'meetings/edit/:meetingId',component:EditComponent}
+      { path: 'admin/view/:userId', component: AdminviewComponent },
+      { path: 'users/view/:userId', component: UserviewComponent },
+      { path: 'meetings/view/:meetingId', component: MeetingviewComponent },
+      { path: 'meetings/create/:userId', component: CreateComponent },
+      { path: 'meetings/edit/:meetingId', component: EditComponent }
 
     ]),
     FormsModule,
@@ -43,7 +43,7 @@ import {SharedModule} from './../shared/shared.module'
       provide: DateAdapter,
       useFactory: adapterFactory
     })
-    
+
   ]
 })
 export class MeetingsModule { }

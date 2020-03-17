@@ -47,9 +47,6 @@ export class LoginComponent implements OnInit, OnDestroy {
         password: this.password
       }
       this.appService.signinFunction(data).subscribe((apiResponse) => {
-
-        if (apiResponse.status == 200) {
-          console.log(apiResponse);
           Cookie.set('authtoken', apiResponse.data.authToken);
           Cookie.set('receiverId', apiResponse.data.userDetails.userId);
           Cookie.set('receiverName', apiResponse.data.userDetails.firstName + " " + apiResponse.data.userDetails.lastName);
@@ -74,18 +71,16 @@ export class LoginComponent implements OnInit, OnDestroy {
             }, 2000);
           }
 
-        }
+        },
 
-        else {
-          this.toastr.warning(`Invalid Email Or Password`);
-        }
+       
         (err) => {
-          this.toastr.warning("some Error Occured while login");
-          this.goToSignup();
+          this.toastr.warning("You Entered Wrong Password");
+          console.log(err);
+          console.log(err.status);
         }
-      }
       )
-    }
+      }
   }
   //sign in function end
   ngOnDestroy() {

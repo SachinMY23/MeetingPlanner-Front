@@ -47,7 +47,7 @@
   </nav>
 </div>
 <br />
-<div class="row" style="text-align: center;">
+<div class="row" style="text-align: center;" *ngIf="userIsAdmin">
   <div class="col-md-12 name">{{name | uppercase}}</div>
 </div>
 <div class="row" style="text-align: center;" *ngIf="allMeetings==undefined">
@@ -100,3 +100,4 @@
 <div class="row" style="text-align: center" *ngIf="allMeetings!==undefined">
   <div class="col-md-12"><button class="btn btn-secondary" (click)="loadMoreMeetings()">Load More</button></div>
 </div>
+<br/>

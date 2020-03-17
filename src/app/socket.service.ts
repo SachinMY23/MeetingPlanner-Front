@@ -1,5 +1,5 @@
 import { Injectable } from '@angular/core';
-import * as io from 'socket.io-client';
+import * as io from 'socket.io-client'
 import { Observable } from 'rxjs';
 import {catchError} from 'rxjs/operators'
 import {tap,map} from 'rxjs/operators'
@@ -12,8 +12,8 @@ import {HttpErrorResponse,HttpParams} from '@angular/common/http';
 })
 export class SocketService {
 
-  //private url = 'http://api.techway.xyz';
-  private url = 'http://localhost:3000';
+  private url = 'http://api.techway.xyz';
+ // private url = 'http://localhost:3000';
 
   private socket;
 

@@ -45,12 +45,6 @@ export class MeetingviewComponent implements OnInit {
     setTimeout(() => {
       this.getSingleUser(this.userId)
     }, 1000)
-
-    this.socket.directAlert().subscribe((message) => {
-      console.log('direct alert')
-      setTimeout(() => { this.toastr.success(message.msg) }, 2000)
-    }
-    )
     if(Cookie.get('receiverIsAdmin')!=='true'){
     this.socket.meetingAlert().subscribe((message) => {
       if (message.userId == this.userId) {
@@ -122,7 +116,6 @@ export class MeetingviewComponent implements OnInit {
       console.log(apiResponse);
       if (apiResponse.status == 200) {
         this.toastr.success("Meeting Deleted successfully");
-        console.log("data is" + data);
         this.socket.deleteMeetingAlert(data);
         this.socket.alert(data)
         setTimeout(() => { this.router.navigate([`users/view/${this.userId}`],{queryParams:{name:data.fullName}}) }, 2000)

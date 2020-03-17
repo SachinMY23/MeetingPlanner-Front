@@ -44,6 +44,9 @@ export class UserviewComponent implements OnInit {
 
 
   ngOnInit() {
+
+    this.userName= Cookie.get('receiverName');
+
     this.getMeetings(this.userId, this.skipInit);
 
     if (Cookie.get('receiverIsAdmin') === 'true') {

@@ -10,8 +10,8 @@ import { skip } from 'rxjs/operators';
 })
 export class AppService {
 
-  //private url =  'http://api.techway.xyz';
-  private url = 'http://localhost:3000';
+  private url =  'http://api.techway.xyz';
+ // private url = 'http://localhost:3000';
 
 
 
@@ -157,7 +157,7 @@ public editMeeting(data):Observable<any>{
   let authtok=Cookie.get('authtoken');
 
   const params=new HttpParams()
-  .set('meetingVenue',data.meetingVenue)
+  .set('meetingVenue',data.meetingPlace)
   .set('meetingTime',data.meetingTime)
   .set('meetingPurpose',data.meetingPurpose)
   return this.http.post(`${this.url}/api/v1/meetings/edit/${data.meetingId}?authToken=${authtok}`,params);

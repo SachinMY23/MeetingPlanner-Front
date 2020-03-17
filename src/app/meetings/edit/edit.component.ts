@@ -66,9 +66,7 @@ export class EditComponent implements OnInit {
         this.email = apiResponse.data[0].email;
       }
     })
-    this.socket.directAlert().subscribe((apiResponse) => {
-      this.toastr.show(apiResponse.msg)
-    });
+    
   }
 
   public editMeetingFunction = () => {
@@ -85,7 +83,7 @@ export class EditComponent implements OnInit {
       adminName: Cookie.get('receiverName'),
       adminNo: Cookie.get('receiverNo'),
       email: this.email,
-      oldtime: this.oldTime,
+      oldMeetingTime: this.oldTime,
       msg: `Your Meeting that was on ${this.oldTime} changed to ${moment(this.time).format('LLLL')}`
     }
     this.appService.editMeeting(currentMeeting).subscribe((apiResponse) => {

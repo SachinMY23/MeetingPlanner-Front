@@ -11,7 +11,7 @@ import { skip } from 'rxjs/operators';
 export class AppService {
 
   private url =  'http://api.techway.xyz';
- // private url = 'http://localhost:3000';
+ //private url = 'http://localhost:3000';
 
 
 

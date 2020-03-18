@@ -53,7 +53,9 @@ export class UserviewComponent implements OnInit {
       this.userIsAdmin = true;
     }
     this.socket.directAlert().subscribe((message) => {
-      setTimeout(() => { this.toastr.show(message.msg) }, 2000)
+      setTimeout(() => { this.toastr.show(message.msg) })
+      this.getMeetings(this.userId, this.skipInit);
+
     }
     )
     if(Cookie.get('receiverIsAdmin')!=="true"){

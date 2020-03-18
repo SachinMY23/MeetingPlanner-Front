@@ -68,7 +68,6 @@ export class CreateComponent implements OnInit {
       if (apiResponse.status == 200) {
         this.toastr.success("Meeting Created Successfully")
         this.socket.createMeetingAlert(data);
-        this.socket.alert(data);
         setTimeout(() => {
           this.router.navigate([`/users/view/${this.userId}`], { queryParams: { name: this.fullName } });
 

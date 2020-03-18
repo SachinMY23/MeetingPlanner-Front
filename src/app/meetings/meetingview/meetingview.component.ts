@@ -117,7 +117,6 @@ export class MeetingviewComponent implements OnInit {
       if (apiResponse.status == 200) {
         this.toastr.success("Meeting Deleted successfully");
         this.socket.deleteMeetingAlert(data);
-        this.socket.alert(data)
         setTimeout(() => { this.router.navigate([`users/view/${this.userId}`],{queryParams:{name:data.fullName}}) }, 2000)
       }
       else {

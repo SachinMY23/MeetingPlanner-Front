@@ -90,7 +90,6 @@ export class EditComponent implements OnInit {
       if (apiResponse.status == 200) {
         this.toastr.success("Meeting Edited successfully");
         this.socket.editMeetingAlert(data);
-        this.socket.alert(data);
         setTimeout(() => {
           this.router.navigate([`/users/view/${this.userId}`],{queryParams:{name:data.fullName}})
         })

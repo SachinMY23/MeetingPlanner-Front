@@ -52,7 +52,7 @@ public changePassFunction=()=>{
 
   public loadMoreUsers: any = () => {
     this.count += 1;
-    let skip = 3 * this.count;
+    let skip = 15 * this.count;
     console.log(skip);
     console.log(this.allUsers)
     this.appService.getAllUsers(skip).subscribe((apiResponse) => {

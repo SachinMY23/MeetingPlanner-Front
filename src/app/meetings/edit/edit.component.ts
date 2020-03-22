@@ -27,13 +27,13 @@ export class EditComponent implements OnInit {
   public time: any;
   public place: any;
   public purpose: any;
-  public adminName: any;
+  public adminName:any;
   public userId: any;
   public receiverId: any;
   public fullName: any;
   public email: any;
   public oldTime: any;
-  public userName = Cookie.get('fullName')
+  public userName = Cookie.get('receiverName')
 
   ngOnInit() {
     this.appService.getSingleMeeting(this.meetingId).subscribe((apiResponse) => {
@@ -74,7 +74,8 @@ export class EditComponent implements OnInit {
       meetingPurpose: this.purpose,
       meetingTime: moment(this.time).format('LLLL'),
       meetingPlace: this.place,
-      meetingId: this.meetingId
+      meetingId: this.meetingId,
+      adminName:Cookie.get('receiverName')
     }
     let data = {
       receiverId: this.userId,
@@ -84,7 +85,7 @@ export class EditComponent implements OnInit {
       adminNo: Cookie.get('receiverNo'),
       email: this.email,
       oldMeetingTime: this.oldTime,
-      msg: `Your Meeting that was on ${this.oldTime} changed to ${moment(this.time).format('LLLL')}`
+      msg: `Your Meeting that is on ${this.oldTime} changed to ${moment(this.time).format('LLLL')}`
     }
     this.appService.editMeeting(currentMeeting).subscribe((apiResponse) => {
       if (apiResponse.status == 200) {

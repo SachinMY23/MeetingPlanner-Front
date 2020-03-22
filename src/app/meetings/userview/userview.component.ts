@@ -53,7 +53,7 @@ export class UserviewComponent implements OnInit {
       this.userIsAdmin = true;
     }
     this.socket.directAlert().subscribe((message) => {
-      setTimeout(() => { this.toastr.show(message.msg) })
+       this.toastr.show(message.msg);
       this.getMeetings(this.userId, this.skipInit);
 
     }
@@ -107,7 +107,7 @@ export class UserviewComponent implements OnInit {
 
   public loadMoreMeetings = () => {
     this.count += 1;
-    let skip = 3 * this.count;
+    let skip = 15 * this.count;
     this.appService.getAllMeetings(this.userId, skip).subscribe((apiResponse) => {
       console.log(apiResponse);
       if (apiResponse.status == 200) {

@@ -16,13 +16,13 @@ export class CreateComponent implements OnInit {
   public time: any;
   public place: any;
   public purpose: any;
-  public adminName: any;
+  public adminName=Cookie.get('receiverName');
   public userId = this._route.snapshot.params.userId;
   public receiverId: any;
   public fullName: any;
   public email: any;
   public oldTime: any;
-  public userName = Cookie.get('fullName')
+  public userName = Cookie.get('receiverName')
 
 
   constructor(public router: Router,
@@ -67,6 +67,7 @@ export class CreateComponent implements OnInit {
     this.appService.createMeeting(meeting).subscribe((apiResponse) => {
       if (apiResponse.status == 200) {
         this.toastr.success("Meeting Created Successfully")
+        console.log(data)
         this.socket.createMeetingAlert(data);
         setTimeout(() => {
           this.router.navigate([`/users/view/${this.userId}`], { queryParams: { name: this.fullName } });

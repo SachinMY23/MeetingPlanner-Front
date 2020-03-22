@@ -98,7 +98,7 @@ export class EditprofileComponent implements OnInit {
               this.goToAdminview();
             }, 2000);
           }else{
-            this.goToAdminview();
+            this.goToUserview();
           }
           } else {
             this.toastr.error(apiResponse.message);
